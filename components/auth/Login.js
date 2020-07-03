@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -8,11 +8,31 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  Alert,
 } from 'react-native';
 
 import {globalStyles} from '../../styles/global';
 
-const Login = () => {
+const Login = ({navigation}) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const loggedIn = () => {
+    // Check username and password.
+    if (!username || !password) {
+      Alert.alert('Error', 'Silahkan isi username dan password', [
+        {text: 'OK'},
+      ]);
+    } else {
+      // Check if username and password is match.
+      if (username === 'admin' && password === 'admin') {
+        navigation.navigate('Home');
+      } else {
+        Alert.alert('Error', 'Username atau Password salah', [{text: 'OK'}]);
+      }
+    }
+  };
+
   return (
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
@@ -34,7 +54,11 @@ const Login = () => {
               source={require('../../assets/img/AuthUsername.png')}
               style={styles.loginIcon}
             />
-            <TextInput placeholder="Username" style={styles.input} />
+            <TextInput
+              placeholder="Username"
+              onChangeText={username => setUsername(username)}
+              style={styles.input}
+            />
           </View>
 
           <View style={styles.passwordInput}>
@@ -42,12 +66,17 @@ const Login = () => {
               source={require('../../assets/img/AuthPassword.png')}
               style={styles.loginIcon}
             />
-            <TextInput placeholder="Kata Sandi" style={styles.input} />
+            <TextInput
+              placeholder="Kata Sandi"
+              secureTextEntry={true}
+              style={styles.input}
+              onChangeText={password => setPassword(password)}
+            />
           </View>
 
           <Text style={styles.mb4} />
 
-          <TouchableOpacity style={globalStyles.btn}>
+          <TouchableOpacity style={globalStyles.btn} onPress={loggedIn}>
             <Text style={globalStyles.btnText}>Masuk</Text>
           </TouchableOpacity>
         </View>

@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Landing from './components/landings/Landing';
 import Login from './components/auth/Login';
+import Home from './components/home/Home';
 
 import {globalStyles} from './styles/global';
 
@@ -25,6 +26,7 @@ const App = () => {
           component={Login}
           options={{headerShown: false}}
         />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
