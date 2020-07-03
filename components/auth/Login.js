@@ -6,31 +6,44 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
 } from 'react-native';
 
 import {globalStyles} from '../../styles/global';
 
 const Login = () => {
   return (
-    <View style={globalStyles.container}>
-      {/* Header */}
-      <View style={styles.loginHeader}>
+    <SafeAreaView style={globalStyles.container}>
+      <ScrollView>
+        {/* Header */}
         <Image
           source={require('../../assets/img/LandingHeader.png')}
           style={styles.loginImage}
         />
-      </View>
 
-      {/* Body */}
-      <View style={styles.loginBody}>
+        {/* Body */}
         <Text style={styles.loginTitle}>Masuk</Text>
         <Text style={styles.loginSubTitle}>
           Silahkan isi Username dan Kata Sandi anda
         </Text>
 
         <View style={globalStyles.mt4}>
-          <TextInput placeholder="Username" style={styles.input} />
-          <TextInput placeholder="Kata Sandi" style={styles.input} />
+          <View>
+            <Image
+              source={require('../../assets/img/AuthUsername.png')}
+              style={styles.loginIcon}
+            />
+            <TextInput placeholder="Username" style={styles.input} />
+          </View>
+
+          <View style={styles.passwordInput}>
+            <Image
+              source={require('../../assets/img/AuthPassword.png')}
+              style={styles.loginIcon}
+            />
+            <TextInput placeholder="Kata Sandi" style={styles.input} />
+          </View>
 
           <Text style={styles.mb4} />
 
@@ -38,7 +51,7 @@ const Login = () => {
             <Text style={globalStyles.btnText}>Masuk</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
 
       {/* Footer */}
       <View style={styles.loginFooter}>
@@ -47,20 +60,11 @@ const Login = () => {
           (C) 2020. PT. Triputra Agro Persada
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  loginHeader: {
-    flex: 1,
-  },
-  loginBody: {
-    flex: 6,
-  },
-  loginFooter: {
-    flex: 1,
-  },
   loginTitle: {
     fontFamily: 'Poppins-Medium',
     fontWeight: '400',
@@ -74,18 +78,28 @@ const styles = StyleSheet.create({
     opacity: 0.4,
   },
   input: {
+    flex: 1,
     height: 40,
-    paddingHorizontal: 30,
+    paddingHorizontal: 50,
     fontSize: 16,
     marginBottom: 15,
     backgroundColor: '#F0F5FF',
     borderRadius: 6,
     opacity: 0.8,
   },
+
   loginFooterText: {
     opacity: 0.25,
     color: '#233258',
     textAlign: 'center',
+  },
+  loginIcon: {
+    position: 'absolute',
+    width: 15,
+    height: 20,
+    zIndex: 1,
+    marginLeft: 20,
+    marginTop: 9,
   },
 });
 
