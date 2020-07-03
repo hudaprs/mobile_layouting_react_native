@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, ImageBackground} from 'react-native';
 
-const Landing = () => {
+const Landing = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -12,7 +12,11 @@ const Landing = () => {
         source={require('../../assets/img/LandingHeader.png')}
         style={styles.imageHeader}
       />
-      <Text style={styles.landingText}>Selamat Datang!</Text>
+      <Text
+        style={styles.landingText}
+        onPress={() => navigation.navigate('Login')}>
+        Selamat Datang!
+      </Text>
     </View>
   );
 };
@@ -20,6 +24,7 @@ const Landing = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
   image: {
     flex: 1,
@@ -34,6 +39,7 @@ const styles = StyleSheet.create({
   },
   landingText: {
     fontSize: 16,
+    fontWeight: '400',
     textAlign: 'center',
     color: '#407BFF',
     marginBottom: 50,
