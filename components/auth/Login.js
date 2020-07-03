@@ -10,6 +10,9 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
+import LandingHeader from '../../assets/img/LandingHeader.svg';
+import Username from '../../assets/img/Username.svg';
+import Password from '../../assets/img/Password.svg';
 
 import {globalStyles} from '../../styles/global';
 
@@ -25,7 +28,7 @@ const Login = ({navigation}) => {
       ]);
     } else {
       // Check if username and password is match.
-      if (username === 'admin' && password === 'admin') {
+      if (username == 'admin' && password == 'admin') {
         navigation.navigate('Home');
       } else {
         Alert.alert('Error', 'Username atau Password salah', [{text: 'OK'}]);
@@ -37,10 +40,7 @@ const Login = ({navigation}) => {
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
         {/* Header */}
-        <Image
-          source={require('../../assets/img/LandingHeader.png')}
-          style={styles.loginImage}
-        />
+        <LandingHeader style={styles.loginImage} />
 
         {/* Body */}
         <Text style={styles.loginTitle}>Masuk</Text>
@@ -50,10 +50,7 @@ const Login = ({navigation}) => {
 
         <View style={globalStyles.mt4}>
           <View>
-            <Image
-              source={require('../../assets/img/AuthUsername.png')}
-              style={styles.loginIcon}
-            />
+            <Username style={styles.loginIcon} />
             <TextInput
               placeholder="Username"
               onChangeText={username => setUsername(username)}
@@ -62,10 +59,7 @@ const Login = ({navigation}) => {
           </View>
 
           <View style={styles.passwordInput}>
-            <Image
-              source={require('../../assets/img/AuthPassword.png')}
-              style={styles.loginIcon}
-            />
+            <Password style={styles.loginIcon} />
             <TextInput
               placeholder="Kata Sandi"
               secureTextEntry={true}
@@ -124,11 +118,9 @@ const styles = StyleSheet.create({
   },
   loginIcon: {
     position: 'absolute',
-    width: 15,
-    height: 20,
     zIndex: 1,
     marginLeft: 20,
-    marginTop: 9,
+    marginTop: 10,
   },
 });
 

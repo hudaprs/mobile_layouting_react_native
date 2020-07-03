@@ -1,14 +1,15 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+// Components
 import Landing from './components/landings/Landing';
 import Login from './components/auth/Login';
-import Home from './components/home/Home';
+import HarvestPlan from './components/harvest/HarvestPlan';
 
-import {globalStyles} from './styles/global';
+// Navigations
+import Tab from './routes/Tab';
 
 const Stack = createStackNavigator();
 
@@ -19,14 +20,14 @@ const App = () => {
         <Stack.Screen
           name="Landing"
           component={Landing}
-          options={{title: 'Landing', headerShown: false}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Login"
           component={Login}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Tab} />
       </Stack.Navigator>
     </NavigationContainer>
   );

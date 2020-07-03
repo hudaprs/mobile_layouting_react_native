@@ -1,17 +1,13 @@
 import React from 'react';
+import LandingHeader from '../../assets/img/LandingHeader.svg';
+import LandingBody from '../../assets/img/LandingBody.svg';
 import {View, Text, StyleSheet, Image, ImageBackground} from 'react-native';
 
 const Landing = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require('../../assets/img/LandingBody.png')}
-        style={styles.image}
-      />
-      <Image
-        source={require('../../assets/img/LandingHeader.png')}
-        style={styles.imageHeader}
-      />
+      <LandingBody style={styles.image} />
+      <LandingHeader style={styles.imageHeader} />
       <Text
         style={styles.landingText}
         onPress={() => navigation.navigate('Login')}>
@@ -23,11 +19,9 @@ const Landing = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
   },
   image: {
-    flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
   },
@@ -42,7 +36,8 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textAlign: 'center',
     color: '#407BFF',
-    marginBottom: 50,
+    minHeight: 100,
+    fontFamily: 'Poppins-Medium',
   },
 });
 
