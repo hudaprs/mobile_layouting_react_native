@@ -79,6 +79,8 @@ target 'EHarvest' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'EHarvestTests' do
     inherit! :complete
     # Pods for testing

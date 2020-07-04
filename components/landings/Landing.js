@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import LandingHeader from '../../assets/img/LandingHeader.svg';
 import LandingBody from '../../assets/img/LandingBody.svg';
-import {View, Text, StyleSheet, Image, ImageBackground} from 'react-native';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
+
+let deviceWidth = Dimensions.get('window').width;
 
 const Landing = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Login');
+    }, 2000);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <LandingBody style={styles.image} />
+      <LandingBody width={deviceWidth} />
       <LandingHeader style={styles.imageHeader} />
       <Text
         style={styles.landingText}
@@ -19,15 +27,16 @@ const Landing = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: '#fff',
-  },
-  image: {
-    resizeMode: 'cover',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   imageHeader: {
     position: 'absolute',
-    marginLeft: 35,
+    top: 0,
+    left: 0,
+    marginLeft: 20,
     marginTop: 30,
     zIndex: 1,
   },
@@ -36,7 +45,6 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textAlign: 'center',
     color: '#407BFF',
-    minHeight: 100,
     fontFamily: 'Poppins-Medium',
   },
 });

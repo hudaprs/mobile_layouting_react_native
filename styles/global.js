@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+let deviceWidth = Dimensions.get('window').width;
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -45,5 +47,14 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     textAlign: 'center',
     color: '#fff',
+  },
+
+  // Boxes
+  box: {
+    resizeMode: 'cover',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#829CD0',
+    backgroundColor: '#fff',
   },
 });

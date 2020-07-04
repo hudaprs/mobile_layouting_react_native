@@ -6,7 +6,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 // Components
 import Landing from './components/landings/Landing';
 import Login from './components/auth/Login';
-import HarvestPlan from './components/harvest/HarvestPlan';
 
 // Navigations
 import Tab from './routes/Tab';
@@ -27,7 +26,11 @@ const App = () => {
           component={Login}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Home" component={Tab} />
+        <Stack.Screen
+          name="Home"
+          component={Tab}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
