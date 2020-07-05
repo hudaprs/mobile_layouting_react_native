@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 
 // Components
 import HarvesterItem from './HarvesterItem';
@@ -9,27 +16,29 @@ import {globalStyles} from '../../styles/global';
 
 const Harvester = () => {
   return (
-    <View style={globalStyles.container}>
-      {/* Harvester Header */}
-      <View style={styles.harvesterHeader}>
-        <View>
-          <Image
-            source={require('../../assets/img/ImageOne.png')}
-            style={styles.image}
-          />
+    <SafeAreaView style={globalStyles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Harvester Header */}
+        <View style={styles.harvesterHeader}>
+          <View>
+            <Image
+              source={require('../../assets/img/ImageOne.png')}
+              style={styles.image}
+            />
+          </View>
+          <View>
+            <Text style={styles.harvesterRole}>Mandor Panen</Text>
+            <Text style={styles.harvesterName}>Débora Barbosa</Text>
+            <Text style={styles.harvesterCode}>41/4121/413/3920</Text>
+          </View>
         </View>
-        <View>
-          <Text style={styles.harvesterRole}>Mandor Panen</Text>
-          <Text style={styles.harvesterName}>Débora Barbosa</Text>
-          <Text style={styles.harvesterCode}>41/4121/413/3920</Text>
-        </View>
-      </View>
 
-      {/* Harvester Body */}
-      <View style={globalStyles.mt4}>
-        <HarvesterItem />
-      </View>
-    </View>
+        {/* Harvester Body */}
+        <View style={globalStyles.mt4}>
+          <HarvesterItem />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

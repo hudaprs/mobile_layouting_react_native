@@ -79,5 +79,44 @@ export const globalStyles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 25,
     marginBottom: 20,
+    elevation: 2,
+  },
+  boxPrimary: {
+    backgroundColor: 'rgba(130, 156, 208, 0.15)',
+    borderRadius: 8,
+    padding: 20,
+    marginBottom: 20,
+  },
+  boxBody: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  boxRadioInput: {
+    marginRight: 10,
+  },
+  boxTitle: {
+    color: '#407BFF',
+    fontSize: 14,
+    fontFamily: 'OpenSans-Semibold',
+  },
+  boxSubTitle: {
+    color: '#3F3F3F',
+    fontSize: 12,
+    fontFamily: 'OpenSans-Regular',
+  },
+
+  // Badges
+  badge: {
+    backgroundColor: '#000',
+    borderRadius: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    color: '#fff',
+    fontFamily: 'Poppins-Medium',
+    textAlign: 'center',
+    fontSize: 10,
+  },
+  badgePrimary: {
+    backgroundColor: '#79A2FF',
   },
 });

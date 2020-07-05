@@ -24,9 +24,9 @@ const HarvestPlan = () => {
       <View style={globalStyles.mt2} />
 
       {/* Boxes */}
-      <View style={styles.harvestPlanBox}>
-        <View style={styles.harvestPlanBoxBody}>
-          <View style={styles.harvestPlanRadioInput}>
+      <View style={globalStyles.boxPrimary}>
+        <View style={globalStyles.boxBody}>
+          <View style={globalStyles.boxRadioInput}>
             <TouchableOpacity
               onPress={() => {
                 radioRefOne.current.updateIsActiveIndex(0);
@@ -40,22 +40,22 @@ const HarvestPlan = () => {
                 onPress={value => {
                   setRadioValue(value);
                 }}
-                buttonSize={16}
-                buttonOuterSize={32}
+                buttonSize={8}
+                buttonOuterSize={16}
               />
             </TouchableOpacity>
           </View>
           <View>
-            <Text style={styles.harvestPlanTitle}>Lokasi Panen</Text>
-            <Text style={styles.harvestPlanSubTitle}>
+            <Text style={globalStyles.boxTitle}>Lokasi Panen</Text>
+            <Text style={globalStyles.boxSubTitle}>
               Pilih lokasi di mana panen akan dilakukan
             </Text>
           </View>
         </View>
       </View>
-      <View style={styles.harvestPlanBox}>
-        <View style={styles.harvestPlanBoxBody}>
-          <View style={styles.harvestPlanRadioInput}>
+      <View style={globalStyles.boxPrimary}>
+        <View style={globalStyles.boxBody}>
+          <View style={globalStyles.boxRadioInput}>
             <TouchableOpacity
               onPress={() => {
                 radioRefOne.current.updateIsActiveIndex(-1);
@@ -69,22 +69,22 @@ const HarvestPlan = () => {
                 onPress={value => {
                   setRadioValue(value);
                 }}
-                buttonSize={16}
-                buttonOuterSize={32}
+                buttonSize={8}
+                buttonOuterSize={16}
               />
             </TouchableOpacity>
           </View>
           <View>
-            <Text style={styles.harvestPlanTitle}>Mandor & Pemanen</Text>
-            <Text style={styles.harvestPlanSubTitle}>
+            <Text style={globalStyles.boxTitle}>Mandor & Pemanen</Text>
+            <Text style={globalStyles.boxSubTitle}>
               Menentukan mandor dan pemanen
             </Text>
           </View>
         </View>
       </View>
-      <View style={styles.harvestPlanBox}>
-        <View style={styles.harvestPlanBoxBody}>
-          <View style={styles.harvestPlanRadioInput}>
+      <View style={globalStyles.boxPrimary}>
+        <View style={globalStyles.boxBody}>
+          <View style={globalStyles.boxRadioInput}>
             <TouchableOpacity
               onPress={() => {
                 radioRefOne.current.updateIsActiveIndex(-1);
@@ -98,14 +98,14 @@ const HarvestPlan = () => {
                 onPress={value => {
                   setRadioValue(value);
                 }}
-                buttonSize={16}
-                buttonOuterSize={32}
+                buttonSize={9}
+                buttonOuterSize={18}
               />
             </TouchableOpacity>
           </View>
           <View>
-            <Text style={styles.harvestPlanTitle}>Angkong Mekanis</Text>
-            <Text style={styles.harvestPlanSubTitle}>
+            <Text style={globalStyles.boxTitle}>Angkong Mekanis</Text>
+            <Text style={globalStyles.boxSubTitle}>
               Menentukan kendaraan dan operator
             </Text>
           </View>
@@ -125,30 +125,8 @@ const styles = StyleSheet.create({
   harvestPlanText: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#233258',
-  },
-  harvestPlanBox: {
-    backgroundColor: 'rgba(130, 156, 208, 0.07999999821186066)',
-    borderRadius: 8,
-    padding: 20,
-    marginBottom: 20,
-  },
-  harvestPlanBoxBody: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  harvestPlanRadioInput: {
-    marginRight: 10,
-  },
-  harvestPlanTitle: {
-    color: '#407BFF',
-    fontSize: 14,
-    fontFamily: 'OpenSans-Semibold',
-  },
-  harvestPlanSubTitle: {
-    color: '#3F3F3F',
-    fontSize: 12,
-    fontFamily: 'OpenSans-Regular',
+    color: '#231658',
+    fontFamily: 'Poppins-Medium',
   },
 });
 
