@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Landing from './components/landings/Landing';
 import Login from './components/auth/Login';
 import HarvestPlan from './components/harvest/HarvestPlan';
+import Harvester from './components/harvest/Harvester';
 
 // Icons
 import Hamburger from './assets/img/Hamburger';
@@ -41,6 +42,28 @@ const App = () => {
           component={HarvestPlan}
           options={{
             title: 'Rencana Panen',
+            headerTitleAlign: 'center',
+            headerRight: () => (
+              <TouchableOpacity>
+                <Hamburger />
+              </TouchableOpacity>
+            ),
+
+            headerTintColor: '#3F3F3F',
+            headerTitleStyle: {
+              fontSize: 18,
+              fontFamily: 'Poppins-Medium',
+            },
+            headerStyle: {
+              backgroundColor: '#fff',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Harvester"
+          component={Harvester}
+          options={{
+            title: 'Pemanen',
             headerTitleAlign: 'center',
             headerRight: () => (
               <TouchableOpacity>

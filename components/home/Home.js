@@ -37,10 +37,12 @@ const Home = ({navigation}) => {
 
         {/* Home Image Photo */}
         <View style={styles.homeImage}>
-          <Image
-            source={require('../../assets/img/ImageOne.png')}
-            style={styles.image}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate('Harvester')}>
+            <Image
+              source={require('../../assets/img/ImageOne.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
         </View>
 
         {/* Bio */}
@@ -55,7 +57,7 @@ const Home = ({navigation}) => {
         </View>
 
         {/* Home Item */}
-        <View style={globalStyles.mt3}>
+        <View style={globalStyles.mt2}>
           <HomeItem navigation={navigation} />
         </View>
       </ScrollView>

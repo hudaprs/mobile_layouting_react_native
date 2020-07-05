@@ -46,6 +46,27 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
   },
+  btnOutLine: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderWidth: 1,
+    padding: 20,
+    borderColor: '#000',
+    borderRadius: 6,
+    paddingVertical: 10,
+  },
+  btnOutLineText: {
+    color: '#000',
+    fontSize: 12,
+    fontFamily: 'Poppins-Regular',
+  },
+  btnOutLinePrimary: {
+    borderColor: '#407BFF',
+  },
+  btnOutLineTextPrimary: {
+    color: '#407BFF',
+  },
 
   // Boxes
   box: {
@@ -55,5 +76,8 @@ export const globalStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2,
     shadowOffset: {width: 2, height: 2},
+    paddingVertical: 10,
+    paddingHorizontal: 25,
+    marginBottom: 20,
   },
 });

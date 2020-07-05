@@ -43,8 +43,6 @@ const styles = StyleSheet.create({
   homeSubMenuContainer: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    paddingVertical: 10,
-    paddingHorizontal: 25,
   },
   homeSubMenuItem: {
     alignItems: 'center',
