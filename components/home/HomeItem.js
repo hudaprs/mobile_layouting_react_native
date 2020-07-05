@@ -7,7 +7,7 @@ import ArrowRight from '../../assets/img/ArrowRight';
 
 import {globalStyles} from '../../styles/global';
 
-const HomeItem = () => {
+const HomeItem = ({navigation}) => {
   return (
     <Fragment>
       <View style={globalStyles.box}>
@@ -19,7 +19,8 @@ const HomeItem = () => {
               <Text style={styles.homeItemSubTitle}>Hari Ini</Text>
             </View>
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('HarvestPlan')}>
                 <ArrowRight />
               </TouchableOpacity>
             </View>

@@ -1,11 +1,16 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 // Components
 import Landing from './components/landings/Landing';
 import Login from './components/auth/Login';
+import HarvestPlan from './components/harvest/HarvestPlan';
+
+// Icons
+import Hamburger from './assets/img/Hamburger';
 
 // Navigations
 import Tab from './routes/Tab';
@@ -30,6 +35,28 @@ const App = () => {
           name="Home"
           component={Tab}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="HarvestPlan"
+          component={HarvestPlan}
+          options={{
+            title: 'Rencana Panen',
+            headerTitleAlign: 'center',
+            headerRight: () => (
+              <TouchableOpacity>
+                <Hamburger />
+              </TouchableOpacity>
+            ),
+
+            headerTintColor: '#3F3F3F',
+            headerTitleStyle: {
+              fontSize: 18,
+              fontFamily: 'Poppins-Medium',
+            },
+            headerStyle: {
+              backgroundColor: '#fff',
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

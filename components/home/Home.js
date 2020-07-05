@@ -56,7 +56,7 @@ const Home = ({navigation}) => {
 
         {/* Home Item */}
         <View style={globalStyles.mt3}>
-          <HomeItem />
+          <HomeItem navigation={navigation} />
         </View>
       </ScrollView>
     </SafeAreaView>

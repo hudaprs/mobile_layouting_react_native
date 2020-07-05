@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   homeSubMenuTitle: {
     textAlign: 'center',
-    fontSize: 8,
+    fontSize: 12,
   },
 });
 
