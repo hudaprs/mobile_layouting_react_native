@@ -1,7 +1,13 @@
 import React, {useEffect} from 'react';
 import LandingHeader from '../../assets/img/LandingHeader.svg';
 import LandingBody from '../../assets/img/LandingBody.svg';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 
 let deviceWidth = Dimensions.get('window').width;
 
@@ -14,13 +20,11 @@ const Landing = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <LandingBody width={deviceWidth} />
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <LandingBody width={deviceWidth} style={{rezizeMode: 'stretch'}} />
+      </TouchableOpacity>
       <LandingHeader style={styles.imageHeader} />
-      <Text
-        style={styles.landingText}
-        onPress={() => navigation.navigate('Login')}>
-        Selamat Datang!
-      </Text>
+      <Text style={styles.landingText}>Selamat Datang!</Text>
     </View>
   );
 };

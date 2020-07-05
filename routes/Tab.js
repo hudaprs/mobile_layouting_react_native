@@ -7,15 +7,31 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 const Tab = createBottomTabNavigator();
 
 import Home from '../components/home/Home';
+import ExOne from '../components/tab/ExOne';
+import ExTwo from '../components/tab/ExTwo';
+import ExThree from '../components/tab/ExThree';
+import ExFour from '../components/tab/ExFour';
 
 const HomeTab = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
+          let icon;
+
           if (route.name === 'Home') {
-            return <Icon name="home" size={size} color={color} />;
+            icon = 'home';
+          } else if (route.name === 'ExOne') {
+            icon = 'list-alt';
+          } else if (route.name === 'ExTwo') {
+            icon = 'leaf';
+          } else if (route.name === 'ExThree') {
+            icon = 'truck';
+          } else if (route.name === 'ExFour') {
+            icon = 'list';
           }
+
+          return <Icon name={icon} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
@@ -24,6 +40,10 @@ const HomeTab = () => {
         showLabel: false,
       }}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="ExOne" component={ExOne} />
+      <Tab.Screen name="ExTwo" component={ExTwo} />
+      <Tab.Screen name="ExThree" component={ExThree} />
+      <Tab.Screen name="ExFour" component={ExFour} />
     </Tab.Navigator>
   );
 };

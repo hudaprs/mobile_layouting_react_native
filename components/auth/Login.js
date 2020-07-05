@@ -50,7 +50,7 @@ const Login = ({navigation}) => {
 
         <View style={globalStyles.mt4}>
           <View>
-            <Username style={styles.loginIcon} />
+            <Username style={styles.loginIcon} width={20} height={20} />
             <TextInput
               placeholder="Username"
               onChangeText={username => setUsername(username)}
@@ -59,7 +59,7 @@ const Login = ({navigation}) => {
           </View>
 
           <View style={styles.passwordInput}>
-            <Password style={styles.loginIcon} />
+            <Password style={styles.loginIcon} width={20} height={20} />
             <TextInput
               placeholder="Kata Sandi"
               secureTextEntry={true}
@@ -103,8 +103,9 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 40,
+    paddingVertical: 5,
     paddingHorizontal: 50,
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 15,
     backgroundColor: '#F0F5FF',
     borderRadius: 6,
