@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -12,6 +12,7 @@ import Harvester from './components/harvest/Harvester';
 
 // Icons
 import Hamburger from './assets/img/Hamburger';
+import ArrowLeft from './assets/img/ArrowLeft';
 
 // Navigations
 import Tab from './routes/Tab';
@@ -21,7 +22,18 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerTintColor: '#3F3F3F',
+          headerTitleStyle: {
+            fontSize: 18,
+            fontFamily: 'Poppins-Medium',
+          },
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerBackImage: () => <ArrowLeft />,
+        }}>
         <Stack.Screen
           name="Landing"
           component={Landing}
@@ -48,15 +60,6 @@ const App = () => {
                 <Hamburger />
               </TouchableOpacity>
             ),
-
-            headerTintColor: '#3F3F3F',
-            headerTitleStyle: {
-              fontSize: 18,
-              fontFamily: 'Poppins-Medium',
-            },
-            headerStyle: {
-              backgroundColor: '#fff',
-            },
           }}
         />
         <Stack.Screen
@@ -70,15 +73,6 @@ const App = () => {
                 <Hamburger />
               </TouchableOpacity>
             ),
-
-            headerTintColor: '#3F3F3F',
-            headerTitleStyle: {
-              fontSize: 18,
-              fontFamily: 'Poppins-Medium',
-            },
-            headerStyle: {
-              backgroundColor: '#fff',
-            },
           }}
         />
       </Stack.Navigator>

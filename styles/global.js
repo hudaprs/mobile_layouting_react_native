@@ -4,6 +4,7 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
+    flexDirection: 'column',
     backgroundColor: '#fff',
   },
 
@@ -71,6 +72,7 @@ export const globalStyles = StyleSheet.create({
   // Boxes
   box: {
     resizeMode: 'cover',
+    backgroundColor: '#fff',
     borderRadius: 8,
     shadowColor: '#829CD0',
     shadowOpacity: 0.2,

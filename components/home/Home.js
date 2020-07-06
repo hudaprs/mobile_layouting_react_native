@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {
   View,
   Text,
   StyleSheet,
   Image,
   TouchableOpacity,
-  SafeAreaView,
   ScrollView,
+  Dimensions,
 } from 'react-native';
 
 // SVG Icons
@@ -19,53 +19,72 @@ import HomeItem from './HomeItem';
 
 import {globalStyles} from '../../styles/global';
 
+let deviceWidth = Dimensions.get('window').width;
+
 const Home = ({navigation}) => {
   return (
-    <SafeAreaView style={globalStyles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.homeHeader}>
-          {/* Bell Icon */}
-          <TouchableOpacity>
-            <HomeNotification />
-          </TouchableOpacity>
+    <Fragment>
+      <View style={{backgroundColor: '#fff', flex: 1, padding: 24}}>
+        <Image
+          source={require('../../assets/img/HomeBackground.png')}
+          style={{
+            width: deviceWidth,
+            position: 'absolute',
+            padding: 10,
+            justifyContent: 'center',
+            alignSelf: 'center',
+          }}
+        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.homeHeader}>
+            {/* Bell Icon */}
+            <TouchableOpacity>
+              <HomeNotification />
+            </TouchableOpacity>
 
-          {/* Hamburger Icon */}
-          <TouchableOpacity>
-            <Hamburger />
-          </TouchableOpacity>
-        </View>
+            {/* Hamburger Icon */}
+            <TouchableOpacity>
+              <Hamburger />
+            </TouchableOpacity>
+          </View>
 
-        {/* Home Image Photo */}
-        <View style={styles.homeImage}>
-          <TouchableOpacity onPress={() => navigation.navigate('Harvester')}>
-            <Image
-              source={require('../../assets/img/ImageOne.png')}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-        </View>
+          {/* Home Image Photo */}
+          <View style={styles.homeImage}>
+            <TouchableOpacity onPress={() => navigation.navigate('Harvester')}>
+              <Image
+                source={require('../../assets/img/ImageOne.png')}
+                style={styles.image}
+              />
+            </TouchableOpacity>
+          </View>
 
-        {/* Bio */}
-        <View style={styles.homeBio}>
-          <Text style={styles.homeBioTitle}>Hello,</Text>
-          <Text style={styles.homeBioName}>Débora Barbosa</Text>
-        </View>
+          {/* Bio */}
+          <View style={styles.homeBio}>
+            <Text style={styles.homeBioTitle}>Hello,</Text>
+            <Text style={styles.homeBioName}>Débora Barbosa</Text>
+          </View>
 
-        {/* Home Sub Menu */}
-        <View style={globalStyles.mt4}>
-          <HomeSubMenu />
-        </View>
+          {/* Home Sub Menu */}
+          <View style={globalStyles.mt4}>
+            <HomeSubMenu />
+          </View>
 
-        {/* Home Item */}
-        <View style={globalStyles.mt2}>
-          <HomeItem navigation={navigation} />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+          {/* Home Item */}
+          <View style={globalStyles.mt2}>
+            <HomeItem navigation={navigation} />
+          </View>
+        </ScrollView>
+      </View>
+    </Fragment>
   );
 };
 
 const styles = StyleSheet.create({
+  homeContainer: {
+    flex: 1,
+    padding: 24,
+    flexDirection: 'column',
+  },
   homeHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',

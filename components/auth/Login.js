@@ -37,7 +37,7 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={globalStyles.container}>
+    <SafeAreaView style={[globalStyles.container, {backgroundColor: '#fff'}]}>
       <ScrollView>
         {/* Header */}
         <LandingHeader style={styles.loginImage} />

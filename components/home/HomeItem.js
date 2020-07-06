@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
+// Svg Icons
+import ArrowRight from '../../assets/img/ArrowRight';
 // Icons
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
-import ArrowRight from '../../assets/img/ArrowRight';
 
 import {globalStyles} from '../../styles/global';
 

@@ -1,6 +1,4 @@
 import React, {useEffect} from 'react';
-import LandingHeader from '../../assets/img/LandingHeader.svg';
-import LandingBody from '../../assets/img/LandingBody.svg';
 import {
   View,
   Text,
@@ -8,6 +6,10 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+
+// SVG Icons
+import LandingHeader from '../../assets/img/LandingHeader.svg';
+import LandingBody from '../../assets/img/LandingBody.svg';
 
 let deviceWidth = Dimensions.get('window').width;
 
