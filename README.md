@@ -15,3 +15,9 @@ These are step to install the React Native project
 ```
 npm install
 ```
+
+## Run android
+
+```
+react-native run-(android|ios)
+```
