@@ -16,6 +16,7 @@ import Hamburger from '../../assets/img/Hamburger';
 // Components
 import HomeSubMenu from './HomeSubMenu';
 import HomeItem from './HomeItem';
+import HomeBackground from '../../assets/img/HomeBackground';
 
 import {globalStyles} from '../../styles/global';
 
@@ -25,12 +26,11 @@ const Home = ({navigation}) => {
   return (
     <Fragment>
       <View style={{backgroundColor: '#fff', flex: 1, padding: 24}}>
-        <Image
-          source={require('../../assets/img/HomeBackground.png')}
+        <HomeBackground
           style={{
             width: deviceWidth,
+            resizeMode: 'cover',
             position: 'absolute',
-            padding: 10,
             justifyContent: 'center',
             alignSelf: 'center',
           }}

@@ -75,13 +75,13 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 8,
     shadowColor: '#829CD0',
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    shadowOffset: {width: 2, height: 2},
+    shadowOpacity: 2,
+    shadowRadius: 0,
+    shadowOffset: {width: 3, height: 3},
     paddingVertical: 10,
     paddingHorizontal: 25,
     marginBottom: 20,
-    elevation: 2,
+    elevation: 3,
   },
   boxPrimary: {
     backgroundColor: 'rgba(130, 156, 208, 0.15)',
@@ -120,5 +120,11 @@ export const globalStyles = StyleSheet.create({
   },
   badgePrimary: {
     backgroundColor: '#79A2FF',
+  },
+
+  // Modals
+  closeModalIcon: {
+    color: '#3F3F3F',
+    marginLeft: 'auto',
   },
 });

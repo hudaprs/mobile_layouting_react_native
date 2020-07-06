@@ -8,37 +8,55 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-  Alert,
+  Modal,
+  Dimensions,
 } from 'react-native';
+
+// SVG
 import LandingHeader from '../../assets/img/LandingHeader.svg';
 import Username from '../../assets/img/Username.svg';
 import Password from '../../assets/img/Password.svg';
 
+let deviceHeight = Dimensions.get('window').height / 2;
+let deviceWidth = Dimensions.get('window').width;
+
+// Components
+import AuthModal from '../modals/AuthModal';
+
+// Icons
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+
+// Global Styles
 import {globalStyles} from '../../styles/global';
 
 const Login = ({navigation}) => {
+  const [modalVisibility, setModalVisibility] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const loggedIn = () => {
     // Check username and password.
     if (!username || !password) {
-      Alert.alert('Error', 'Silahkan isi username dan password', [
-        {text: 'OK'},
-      ]);
+      setModalVisibility(true);
     } else {
       // Check if username and password is match.
       if (username == 'admin' && password == 'admin') {
         navigation.navigate('Home');
       } else {
-        Alert.alert('Error', 'Username atau Password salah', [{text: 'OK'}]);
+        setModalVisibility(true);
       }
     }
   };
 
   return (
-    <SafeAreaView style={[globalStyles.container, {backgroundColor: '#fff'}]}>
+    <SafeAreaView style={[globalStyles.container]}>
       <ScrollView>
+        {/* MOdals */}
+        <AuthModal
+          modalVisibility={modalVisibility}
+          setModalVisibility={setModalVisibility}
+        />
+
         {/* Header */}
         <LandingHeader style={styles.loginImage} />
 
