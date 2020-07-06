@@ -122,6 +122,24 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#79A2FF',
   },
 
+  // Text
+  textPrimary: {
+    color: '#407BFF',
+    fontSize: 14,
+    fontFamily: 'Poppins-SemiBold',
+  },
+  textSecondary: {
+    fontFamily: 'Poppins-SemiBold',
+    fontWeight: 'bold',
+    fontSize: 14,
+    color: '#233258',
+  },
+  textAlternative: {
+    fontFamily: 'Poppins-Regular',
+    opacity: 0.4,
+    fontSize: 12,
+  },
+
   // Modals
   closeModalIcon: {
     color: '#3F3F3F',

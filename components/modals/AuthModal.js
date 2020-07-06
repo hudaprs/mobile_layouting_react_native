@@ -6,10 +6,15 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 
+// SVG'
+import WrongUsername from '../../assets/img/auth/WrongUsername';
+import WrongPassword from '../../assets/img/auth/WrongPassword';
+import OtorityWarning from '../../assets/img/auth/OtoryWarning';
+
 // Dimensions
-let deviceHeight = Dimensions.get('window').height / 2;
 let deviceWidth = Dimensions.get('window').width;
 
 // Icons
@@ -23,6 +28,7 @@ const AuthModal = ({modalVisibility, setModalVisibility, data}) => {
     <Modal visible={modalVisibility} animationType="fade" transparent={true}>
       <View style={[styles.authModal, {backgroundColor: 'rgba(0, 0, 0, .8)'}]}>
         <View style={styles.authModalContent}>
+          {/* Header */}
           <View style={styles.authModalHeader}>
             <Icon
               name="times"
@@ -31,18 +37,48 @@ const AuthModal = ({modalVisibility, setModalVisibility, data}) => {
               style={globalStyles.closeModalIcon}
             />
           </View>
+
+          {/* Body */}
           <View style={styles.authModalBody}>
-            <Text style={styles.authModalTitle}>{data && data.message}</Text>
-            <Text style={styles.authModalSubTitle}>
+            {/* Check type of error  */}
+            {data && data.type === 'invalidUsername' && (
+              <WrongUsername style={globalStyles.mb1} />
+            )}
+            {data && data.type === 'invalidPassword' && (
+              <WrongPassword style={globalStyles.mb1} />
+            )}
+            {data && data.type === 'invalidOtority' && (
+              <OtorityWarning style={globalStyles.mb1} />
+            )}
+
+            <Text style={globalStyles.textSecondary}>
+              {data && data.message}
+            </Text>
+            <Text style={[globalStyles.textAlternative, {textAlign: 'center'}]}>
               {data && data.messageTwo}
             </Text>
           </View>
-          <View style={globalStyles.mt4}>
+
+          {/* Footer */}
+          <View style={globalStyles.mt2}>
             <TouchableOpacity
-              style={[globalStyles.btn]}
+              style={globalStyles.btn}
               onPress={() => setModalVisibility(false)}>
-              <Text style={globalStyles.btnText}>Coba Lagi</Text>
+              <Text style={globalStyles.btnText}>
+                {data && data.type == 'invalidOtority'
+                  ? 'Yakin dan Hapus Data'
+                  : 'Coba Lagi'}
+              </Text>
             </TouchableOpacity>
+
+            {/* For invalidOtority type only */}
+            {data && data.type == 'invalidOtority' && (
+              <TouchableOpacity style={globalStyles.mt1}>
+                <Text style={[globalStyles.textPrimary, {textAlign: 'center'}]}>
+                  Saya Tidak Mau Menghapus Data
+                </Text>
+              </TouchableOpacity>
+            )}
           </View>
         </View>
       </View>
@@ -53,19 +89,13 @@ const AuthModal = ({modalVisibility, setModalVisibility, data}) => {
 const styles = StyleSheet.create({
   authModal: {
     flex: 1,
+    alignItems: 'center',
     justifyContent: 'flex-end',
   },
   authModalContent: {
     borderRadius: 10,
     backgroundColor: '#fff',
-    shadowColor: '#829CD0',
-    shadowOpacity: 2,
-    shadowRadius: 2,
-    elevation: 3,
-    shadowOffset: {width: -3, height: -3},
     padding: 20,
-    elevation: 2,
-    height: deviceHeight,
     width: deviceWidth,
   },
   authModalHeader: {
@@ -76,18 +106,6 @@ const styles = StyleSheet.create({
   authModalBody: {
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  authModalFooter: {},
-  authModalTitle: {
-    fontFamily: 'Poppins-Medium',
-    fontWeight: 'bold',
-    fontSize: 16,
-    color: '#233258',
-  },
-  authModalSubTitle: {
-    fontFamily: 'Poppins-Medium',
-    opacity: 0.4,
-    fontSize: 12,
   },
 });
 

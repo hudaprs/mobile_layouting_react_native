@@ -31,17 +31,52 @@ import {globalStyles} from '../../styles/global';
 
 const Login = ({navigation}) => {
   const [modalVisibility, setModalVisibility] = useState('');
+  const [modalData, setModalData] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const otorityError = true;
 
   const loggedIn = () => {
-    // Check username and password.
+    // Uncomment this if you want to check otority error
+    // if (otorityError == true) {
+    //   setModalVisibility(true);
+    //   setModalData({
+    //     type: 'invalidOtority',
+    //     message: 'Perubahan Otorisasi',
+    //     messageTwo:
+    //       'Kamu login beda ofdeling & data akan dihapus. Yakin ingin melanjutkan?',
+    //   });
+    // }
+
+    // Simple credentials check
     if (!username || !password) {
       setModalVisibility(true);
+      setModalData({type: 'invalidCreds', message: 'Isi semua form'});
     } else {
       // Check if username and password is match.
       if (username == 'admin' && password == 'admin') {
         navigation.navigate('Home');
+      } else if (username != 'admin') {
+        setModalVisibility(true);
+        setModalData({
+          type: 'invalidUsername',
+          message: 'Username Salah',
+          messageTwo: 'Coba cek ulang Username kamu ya',
+        });
+      } else if (password != 'admin') {
+        setModalVisibility(true);
+        setModalData({
+          type: 'invalidPassword',
+          message: 'Password Salah',
+          messageTwo: 'Coba cek ulang Password kamu ya',
+        });
+      } else if (otorityError == true) {
+        setModalVisibility(true);
+        setModalData({
+          type: 'invalidOtority',
+          message: 'Password Salah',
+          messageTwo: 'Coba cek ulang Password kamu ya',
+        });
       } else {
         setModalVisibility(true);
       }
@@ -49,12 +84,13 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={[globalStyles.container]}>
+    <SafeAreaView style={globalStyles.container}>
       <ScrollView>
         {/* MOdals */}
         <AuthModal
           modalVisibility={modalVisibility}
           setModalVisibility={setModalVisibility}
+          data={modalData}
         />
 
         {/* Header */}
