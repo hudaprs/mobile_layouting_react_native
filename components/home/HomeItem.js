@@ -2,9 +2,9 @@ import React, {Fragment} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 // Svg
-import ArrowRight from '../../assets/img/ArrowRight';
-import MapMarkerIcon from '../../assets/img/home/MapMarkerIcon';
-import UserItemIcon from '../../assets/img/home/UserItemIcon';
+import ArrowRight from '../../assets/img/ArrowRight.svg';
+import MapMarkerIcon from '../../assets/img/home/MapMarkerIcon.svg';
+import UserItemIcon from '../../assets/img/home/UserItemIcon.svg';
 
 import {globalStyles} from '../../styles/global';
 

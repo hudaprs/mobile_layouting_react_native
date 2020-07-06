@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 
 // SVG
-import HomeBackground from '../../assets/img/home/HomeBackground';
-import HomeNotification from '../../assets/img/home/HomeNotification';
-import Hamburger from '../../assets/img/Hamburger';
+import HomeBackground from '../../assets/img/home/HomeBackground.svg';
+import HomeNotification from '../../assets/img/home/HomeNotification.svg';
+import Hamburger from '../../assets/img/Hamburger.svg';
 
 // Components
 import HomeSubMenu from './HomeSubMenu';
@@ -23,6 +23,7 @@ import {globalStyles} from '../../styles/global';
 
 // Dimensions
 let deviceWidth = Dimensions.get('window').width;
+let deviceHeight = Dimensions.get('window').height;
 
 const Home = ({navigation}) => {
   return (
@@ -30,7 +31,6 @@ const Home = ({navigation}) => {
       <View style={{backgroundColor: '#fff', flex: 1, padding: 24}}>
         <HomeBackground
           style={{
-            width: deviceWidth,
             position: 'absolute',
             justifyContent: 'center',
             alignSelf: 'center',

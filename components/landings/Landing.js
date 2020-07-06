@@ -5,11 +5,15 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  Image,
 } from 'react-native';
 
+// Components
+import FullWidthImage from 'react-native-fullwidth-image';
+
 // SVG
-import LandingHeader from '../../assets/img/landing/LandingHeader';
-import LandingBody from '../../assets/img/landing/LandingBody';
+import LandingHeader from '../../assets/img/landing/LandingHeader.svg';
+import LandingBody from '../../assets/img/landing/LandingBody.svg';
 
 let deviceWidth = Dimensions.get('window').width;
 
@@ -23,7 +27,7 @@ const Landing = ({navigation}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <LandingBody width={deviceWidth} style={{rezizeMode: 'stretch'}} />
+        <LandingBody width={deviceWidth} />
       </TouchableOpacity>
       <LandingHeader style={styles.imageHeader} />
       <Text style={styles.landingText}>Selamat Datang!</Text>

@@ -11,8 +11,8 @@ import HarvestPlan from './components/harvest/HarvestPlan';
 import Harvester from './components/harvest/Harvester';
 
 // Icons
-import Hamburger from './assets/img/Hamburger';
-import ArrowLeft from './assets/img/ArrowLeft';
+import Hamburger from './assets/img/Hamburger.svg';
+import ArrowLeft from './assets/img/ArrowLeft.svg';
 
 // Navigations
 import Tab from './routes/Tab';

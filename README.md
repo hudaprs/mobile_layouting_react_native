@@ -16,6 +16,12 @@ These are step to install the React Native project
 npm install
 ```
 
+## Link React Native Asset
+
+```
+react-native link
+```
+
 ## Run android
 
 ```
