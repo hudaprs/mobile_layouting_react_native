@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-// Svg Icons
+// Svg
 import ArrowRight from '../../assets/img/ArrowRight';
-// Icons
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import MapMarkerIcon from '../../assets/img/home/MapMarkerIcon';
+import UserItemIcon from '../../assets/img/home/UserItemIcon';
 
 import {globalStyles} from '../../styles/global';
 
@@ -29,11 +29,11 @@ const HomeItem = ({navigation}) => {
         {/* Body */}
         <View style={styles.homeItemBody}>
           <View style={styles.homeItemBodyContent}>
-            <Icon name="map-marker" size={15} style={styles.homeItemBodyIcon} />
-            <Text style={styles.homeItemBodyText}> Block D20</Text>
+            <MapMarkerIcon size={15} style={styles.homeItemBodyIcon} />
+            <Text style={styles.homeItemBodyText}>Blok D20</Text>
           </View>
           <View style={styles.homeItemBodyContent}>
-            <Icon name="user" size={15} style={styles.homeItemBodyIcon} />
+            <UserItemIcon size={15} style={styles.homeItemBodyIcon} />
             <Text style={styles.homeItemBodyText}>Artem Sazonov</Text>
           </View>
         </View>
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
   },
   homeItemTitle: {
     fontSize: 14,
-    fontWeight: '400',
     fontFamily: 'Poppins-SemiBold',
     color: '#626D87',
   },
@@ -66,15 +65,16 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   homeItemBodyText: {
-    marginLeft: 10,
     fontSize: 12,
-    fontWeight: '400',
     color: '#626D87',
+    fontFamily: 'Poppins-SemiBold',
   },
   homeItemBodyContent: {
     alignItems: 'center',
-    justifyContent: 'flex-start',
     flexDirection: 'row',
+  },
+  homeItemBodyIcon: {
+    marginRight: 10,
   },
 });
 

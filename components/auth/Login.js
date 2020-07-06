@@ -2,29 +2,20 @@ import React, {useState} from 'react';
 import {
   View,
   Text,
-  Image,
   StyleSheet,
   TextInput,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-  Modal,
-  Dimensions,
 } from 'react-native';
 
 // SVG
-import LandingHeader from '../../assets/img/LandingHeader.svg';
-import Username from '../../assets/img/Username.svg';
-import Password from '../../assets/img/Password.svg';
-
-let deviceHeight = Dimensions.get('window').height / 2;
-let deviceWidth = Dimensions.get('window').width;
+import LandingHeader from '../../assets/img/landing/LandingHeader.svg';
+import Username from '../../assets/img/auth/Username.svg';
+import Password from '../../assets/img/auth/Password.svg';
 
 // Components
 import AuthModal from '../modals/AuthModal';
-
-// Icons
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 // Global Styles
 import {globalStyles} from '../../styles/global';

@@ -22,7 +22,7 @@ const Harvester = () => {
         <View style={styles.harvesterHeader}>
           <View>
             <Image
-              source={require('../../assets/img/ImageOne.png')}
+              source={require('../../assets/img/home/ImageOne.png')}
               style={styles.image}
             />
           </View>

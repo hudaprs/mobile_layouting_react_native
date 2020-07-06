@@ -2,10 +2,10 @@ import React, {Fragment} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 
 // Svg Icons
-import UserIcon from '../../assets/img/UserIcon';
-import MoneyIcon from '../../assets/img/MoneyIcon';
-import SoilIcon from '../../assets/img/SoilIcon';
-import PickupIcon from '../../assets/img/PickupIcon';
+import UserIcon from '../../assets/img/home/UserIcon';
+import MoneyIcon from '../../assets/img/home/MoneyIcon';
+import SoilIcon from '../../assets/img/home/SoilIcon';
+import PickupIcon from '../../assets/img/home/PickupIcon';
 
 import {globalStyles} from '../../styles/global';
 

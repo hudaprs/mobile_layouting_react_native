@@ -7,9 +7,9 @@ import {
   Dimensions,
 } from 'react-native';
 
-// SVG Icons
-import LandingHeader from '../../assets/img/LandingHeader.svg';
-import LandingBody from '../../assets/img/LandingBody.svg';
+// SVG
+import LandingHeader from '../../assets/img/landing/LandingHeader';
+import LandingBody from '../../assets/img/landing/LandingBody';
 
 let deviceWidth = Dimensions.get('window').width;
 

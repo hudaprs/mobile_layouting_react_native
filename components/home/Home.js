@@ -9,17 +9,19 @@ import {
   Dimensions,
 } from 'react-native';
 
-// SVG Icons
-import HomeNotification from '../../assets/img/HomeNotification';
+// SVG
+import HomeBackground from '../../assets/img/home/HomeBackground';
+import HomeNotification from '../../assets/img/home/HomeNotification';
 import Hamburger from '../../assets/img/Hamburger';
 
 // Components
 import HomeSubMenu from './HomeSubMenu';
 import HomeItem from './HomeItem';
-import HomeBackground from '../../assets/img/HomeBackground';
 
+// Global Styles
 import {globalStyles} from '../../styles/global';
 
+// Dimensions
 let deviceWidth = Dimensions.get('window').width;
 
 const Home = ({navigation}) => {
@@ -29,7 +31,6 @@ const Home = ({navigation}) => {
         <HomeBackground
           style={{
             width: deviceWidth,
-            resizeMode: 'cover',
             position: 'absolute',
             justifyContent: 'center',
             alignSelf: 'center',
@@ -52,7 +53,7 @@ const Home = ({navigation}) => {
           <View style={styles.homeImage}>
             <TouchableOpacity onPress={() => navigation.navigate('Harvester')}>
               <Image
-                source={require('../../assets/img/ImageOne.png')}
+                source={require('../../assets/img/home/ImageOne.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
