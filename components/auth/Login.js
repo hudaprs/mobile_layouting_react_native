@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {
   View,
   Text,
@@ -7,7 +7,9 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  BackHandler,
 } from 'react-native';
+import {useFocusEffect} from '@react-navigation/native';
 
 // SVG
 import LandingHeader from '../../assets/img/landing/LandingHeader.svg';
@@ -20,12 +22,27 @@ import AuthModal from '../modals/AuthModal';
 // Global Styles
 import {globalStyles} from '../../styles/global';
 
-const Login = ({navigation}) => {
+const Login = ({navigation, route}) => {
   const [modalVisibility, setModalVisibility] = useState('');
   const [modalData, setModalData] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const otorityError = true;
+
+  // Disable back button, for preventing go to splash screen
+  const backAction = () => {
+    BackHandler.exitApp();
+    return true;
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      BackHandler.addEventListener('hardwareBackPress', backAction);
+      return () => {
+        BackHandler.removeEventListener('hardwareBackPress', backAction);
+      };
+    }, []),
+  );
 
   const loggedIn = () => {
     // Uncomment this if you want to check otority error
@@ -40,6 +57,7 @@ const Login = ({navigation}) => {
     // }
 
     // Simple credentials check
+    // This for testing only
     if (!username || !password) {
       setModalVisibility(true);
       setModalData({type: 'invalidCreds', message: 'Isi semua form'});

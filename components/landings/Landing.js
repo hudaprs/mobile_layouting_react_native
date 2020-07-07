@@ -5,11 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
-  Image,
 } from 'react-native';
-
-// Components
-import FullWidthImage from 'react-native-fullwidth-image';
 
 // SVG
 import LandingHeader from '../../assets/img/landing/LandingHeader.svg';
@@ -21,7 +17,7 @@ const Landing = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Login');
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
