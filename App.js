@@ -55,11 +55,6 @@ const App = () => {
           options={{
             title: 'Rencana Panen',
             headerTitleAlign: 'center',
-            headerRight: () => (
-              <TouchableOpacity>
-                <Hamburger />
-              </TouchableOpacity>
-            ),
           }}
         />
         <Stack.Screen
@@ -68,11 +63,6 @@ const App = () => {
           options={{
             title: 'Pemanen',
             headerTitleAlign: 'center',
-            headerRight: () => (
-              <TouchableOpacity>
-                <Hamburger />
-              </TouchableOpacity>
-            ),
           }}
         />
       </Stack.Navigator>

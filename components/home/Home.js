@@ -1,18 +1,15 @@
 import React, {Fragment} from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   Image,
   TouchableOpacity,
   ScrollView,
-  Dimensions,
 } from 'react-native';
 
 // SVG
 import HomeBackground from '../../assets/img/home/HomeBackground.svg';
 import HomeNotification from '../../assets/img/home/HomeNotification.svg';
-import Hamburger from '../../assets/img/Hamburger.svg';
 
 // Components
 import HomeSubMenu from './HomeSubMenu';
@@ -21,48 +18,26 @@ import HomeItem from './HomeItem';
 // Global Styles
 import {globalStyles} from '../../styles/global';
 
-// Dimensions
-let deviceWidth = Dimensions.get('window').width;
-let deviceHeight = Dimensions.get('window').height;
-
 const Home = ({navigation}) => {
   return (
     <Fragment>
-      <View style={{backgroundColor: '#fff', flex: 1, padding: 24}}>
-        <HomeBackground
-          style={{
-            position: 'absolute',
-            justifyContent: 'center',
-            alignSelf: 'center',
-          }}
-        />
+      <View style={styles.homeContainer}>
+        <HomeBackground resizeMode={'cover'} style={styles.backgroundImage} />
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.homeHeader}>
-            {/* Bell Icon */}
-            <TouchableOpacity>
-              <HomeNotification />
-            </TouchableOpacity>
-
-            {/* Hamburger Icon */}
-            <TouchableOpacity>
-              <Hamburger />
-            </TouchableOpacity>
-          </View>
-
-          {/* Home Image Photo */}
-          <View style={styles.homeImage}>
+            {/* Photo Profile */}
             <TouchableOpacity onPress={() => navigation.navigate('Harvester')}>
               <Image
                 source={require('../../assets/img/home/ImageOne.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
-          </View>
 
-          {/* Bio */}
-          <View style={styles.homeBio}>
-            <Text style={styles.homeBioTitle}>Hello,</Text>
-            <Text style={styles.homeBioName}>Débora Barbosa</Text>
+            {/* Hamburger Icon */}
+            <TouchableOpacity>
+              <View style={styles.redDotNotification} />
+              <HomeNotification />
+            </TouchableOpacity>
           </View>
 
           {/* Home Sub Menu */}
@@ -82,9 +57,13 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   homeContainer: {
+    backgroundColor: '#fff',
     flex: 1,
     padding: 24,
-    flexDirection: 'column',
+  },
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
   },
   homeHeader: {
     flexDirection: 'row',
@@ -95,24 +74,18 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   image: {
-    borderRadius: 2,
-    width: 36,
-    height: 36,
+    borderRadius: 12,
+    width: 50,
+    height: 50,
   },
-  homeBio: {
-    marginTop: 20,
-  },
-  homeBioTitle: {
-    fontFamily: 'Poppins-SemiBold',
-    color: '#233258',
-    opacity: 0.4,
-    fontSize: 18,
-  },
-  homeBioName: {
-    fontFamily: 'Poppins-SemiBold',
-    color: '#233258',
-    opacity: 0.7,
-    fontSize: 24,
+  redDotNotification: {
+    backgroundColor: '#F9686A',
+    position: 'absolute',
+    right: 1,
+    width: 10,
+    height: 10,
+    borderRadius: 10 / 2,
+    zIndex: 1,
   },
 });
 

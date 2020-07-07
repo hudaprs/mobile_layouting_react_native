@@ -17,7 +17,7 @@ const HarvestPlan = () => {
   return (
     <View style={globalStyles.container}>
       {/* Title */}
-      <Text style={styles.harvestPlanText}>
+      <Text style={[globalStyles.textSecondary, {opacity: 0.5}]}>
         Kamu harus menentukan rencana sesuai dengan item di bawah ini
       </Text>
 
@@ -120,14 +120,5 @@ const HarvestPlan = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  harvestPlanText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: '#231658',
-    fontFamily: 'Poppins-Medium',
-  },
-});
 
 export default HarvestPlan;
