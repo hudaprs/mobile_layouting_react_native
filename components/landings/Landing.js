@@ -11,7 +11,8 @@ import {
 import LandingHeader from '../../assets/img/landing/LandingHeader.svg';
 import LandingBody from '../../assets/img/landing/LandingBody.svg';
 
-let deviceWidth = Dimensions.get('window').width;
+// Device Size
+import {deviceSize} from '../../styles/global';
 
 const Landing = ({navigation}) => {
   useEffect(() => {
@@ -22,10 +23,18 @@ const Landing = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <LandingBody width={deviceWidth} />
-      </TouchableOpacity>
+      {/* Body Header */}
       <LandingHeader style={styles.imageHeader} />
+
+      {/* Body Image */}
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <LandingBody
+          width={deviceSize.deviceWidth}
+          height={deviceSize.deviceHeight}
+        />
+      </TouchableOpacity>
+
+      {/* Label */}
       <Text style={styles.landingText}>Selamat Datang!</Text>
     </View>
   );
@@ -47,8 +56,11 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   landingText: {
+    position: 'absolute',
+    zIndex: 1,
+    bottom: 0,
+    marginBottom: 30,
     fontSize: 16,
-    fontWeight: '400',
     textAlign: 'center',
     color: '#407BFF',
     fontFamily: 'Poppins-Medium',

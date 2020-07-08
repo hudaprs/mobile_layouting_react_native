@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 export const globalStyles = StyleSheet.create({
   container: {
@@ -146,3 +146,9 @@ export const globalStyles = StyleSheet.create({
     marginLeft: 'auto',
   },
 });
+
+// Device Size
+export const deviceSize = {
+  deviceWidth: Dimensions.get('window').width,
+  deviceHeight: Dimensions.get('window').height,
+};
