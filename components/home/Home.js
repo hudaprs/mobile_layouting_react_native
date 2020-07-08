@@ -46,7 +46,7 @@ const Home = ({navigation}) => {
             </View>
 
             {/* Sub Menu */}
-            <View style={styles.homeSubMenu}>
+            <View style={styles.homePadding}>
               <HomeSubMenu />
             </View>
           </ImageBackground>
@@ -76,12 +76,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  homeSubMenu: {
-    position: 'absolute',
-    width: '100%',
-    padding: 24,
-    top: 80,
   },
   homeImage: {
     marginTop: 30,
