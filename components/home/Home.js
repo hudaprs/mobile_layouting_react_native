@@ -5,10 +5,10 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  ImageBackground,
 } from 'react-native';
 
 // SVG
-import HomeBackground from '../../assets/img/home/HomeBackground.svg';
 import HomeNotification from '../../assets/img/home/HomeNotification.svg';
 
 // Components
@@ -22,31 +22,37 @@ const Home = ({navigation}) => {
   return (
     <Fragment>
       <View style={styles.homeContainer}>
-        <HomeBackground resizeMode={'cover'} style={styles.backgroundImage} />
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.homeHeader}>
-            {/* Photo Profile */}
-            <TouchableOpacity onPress={() => navigation.navigate('Harvester')}>
-              <Image
-                source={require('../../assets/img/home/ImageOne.png')}
-                style={styles.image}
-              />
-            </TouchableOpacity>
+          {/* Header */}
+          <ImageBackground
+            source={require('../../assets/img/home/HomeBackgroundHeader.png')}
+            style={styles.homeImageBackground}
+            resizeMode={'stretch'}>
+            <View style={[styles.homeHeader, styles.homePadding]}>
+              {/* Photo Profile */}
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Harvester')}>
+                <Image
+                  source={require('../../assets/img/home/ImageOne.png')}
+                  style={styles.image}
+                />
+              </TouchableOpacity>
 
-            {/* Hamburger Icon */}
-            <TouchableOpacity>
-              <View style={styles.redDotNotification} />
-              <HomeNotification />
-            </TouchableOpacity>
-          </View>
+              {/* HomeNotification Icon */}
+              <TouchableOpacity>
+                <View style={styles.redDotNotification} />
+                <HomeNotification />
+              </TouchableOpacity>
+            </View>
 
-          {/* Home Sub Menu */}
-          <View style={globalStyles.mt4}>
-            <HomeSubMenu />
-          </View>
+            {/* Sub Menu */}
+            <View style={styles.homeSubMenu}>
+              <HomeSubMenu />
+            </View>
+          </ImageBackground>
 
-          {/* Home Item */}
-          <View style={globalStyles.mt2}>
+          <View style={[styles.homePadding, globalStyles.mt4]}>
+            {/* Home Item */}
             <HomeItem navigation={navigation} />
           </View>
         </ScrollView>
@@ -59,16 +65,23 @@ const styles = StyleSheet.create({
   homeContainer: {
     backgroundColor: '#fff',
     flex: 1,
+  },
+  homePadding: {
     padding: 24,
   },
-  backgroundImage: {
-    position: 'absolute',
-    top: 0,
+  homeImageBackground: {
+    height: 172,
   },
   homeHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  homeSubMenu: {
+    position: 'absolute',
+    width: '100%',
+    padding: 24,
+    top: 80,
   },
   homeImage: {
     marginTop: 30,
